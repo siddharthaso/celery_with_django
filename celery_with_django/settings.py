@@ -127,14 +127,28 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 #celery settings
 CELERY_BROKER_URL = 'redis://127.0.0.1:6379'
-CELERY_ACCEPT_CONTENT = ['application/json']
-CELERY_RESULT_SERIALIZER = 'json'
-CELERY_TASK_SERIALIZER = 'json'
-CELERY_TIMEZONE = "Asia/Kolkata"
+
+# CELERY_ACCEPT_CONTENT = ['application/json']
+accept_content = ['application/json']
+
+# CELERY_RESULT_SERIALIZER = 'json'
+result_serializer = 'json'
+
+# CELERY_TASK_SERIALIZER = 'json'
+task_serializer = 'json'
+
+# CELERY_TIMEZONE = "Asia/Kolkata"
+timezone = "Asia/Kolkata"
+
+
 CELERY_TASK_TRACK_STARTED = True
 CELERY_TASK_TIME_LIMIT = 30 * 60
 
-CELERY_RESULT_BACKEND = 'redis://127.0.0.1:6379'
+# CELERY_RESULT_BACKEND = 'redis://127.0.0.1:6379'
+result_backend = 'redis://127.0.0.1:6379'
 
 #CELERY BEAT
 CELERY_BEAT_SCHEDULER = 'django_celery_beat.schedulers:DatabaseScheduler'
+
+#TO avoide warnings
+# celery upgrade settings path/to/settings.py
